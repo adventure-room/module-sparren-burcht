@@ -1,8 +1,7 @@
 package com.programyourhome.adventureroom.sparrenburcht.module;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Pattern;
+import java.util.Arrays;
+import java.util.Collection;
 
 import com.programyourhome.adventureroom.dsl.regex.AbstractRegexDslAdventureModule;
 import com.programyourhome.adventureroom.dsl.regex.RegexActionConverter;
@@ -32,13 +31,13 @@ public class SparrenBurchtAdventureModule extends AbstractRegexDslAdventureModul
     }
 
     @Override
-    protected Map<Pattern, RegexActionConverter<?>> getRegexActionConverters() {
-        Map<Pattern, RegexActionConverter<?>> converters = new HashMap<>();
+    protected Collection<RegexActionConverter<?>> getRegexActionConverters() {
+        return Arrays.asList(new SpeakAtSpeakerActionConverter());
+    }
 
-        Pattern pattern = Pattern.compile("(?<characterId>[A-Za-z0-9]+) says \"(?<text>[^\"]+)\" at (?<speakerId>[A-Za-z0-9]+)");
-        converters.put(pattern, new SpeakAtSpeakerActionConverter());
-
-        return converters;
+    @Override
+    public void stop() {
+        // No action needed
     }
 
 }

@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
-import java.util.UUID;
 
 import com.programyourhome.adventureroom.amazonpolly.service.model.PollyResult;
 import com.programyourhome.adventureroom.sparrenburcht.model.SpeakAtSpeakerAction;
@@ -18,9 +17,8 @@ public class SpeakAtSpeakerActionExecutor extends AbstractSparrenBurchtExecutor<
     public void execute(SpeakAtSpeakerAction action, ExecutionContext context) {
         PollyResult pollyResult = this.getAmazonPolly(context).synthesizeText(action.character.voiceId, action.text);
         File cacheFile = this.cacheLocally(pollyResult);
-        UUID playbackID = this.getImmerse(context).playAtSpeakers("http://10.42.0.1:19161/audio/" +
-                cacheFile.getName().substring(0, cacheFile.getName().length() - 4), Arrays.asList(action.speaker), false);
-        this.getImmerse(context).waitForPlayback(playbackID);
+        this.getImmerse(context).playAtSpeakers("http://localhost:19161/audio/" +
+                cacheFile.getName().substring(0, cacheFile.getName().length() - 4), Arrays.asList(action.speaker), false, true);
     }
 
     private File cacheLocally(PollyResult pollyResult) {
