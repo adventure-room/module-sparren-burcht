@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.programyourhome.adventureroom.module.sparrenburcht</groupId>
         <artifactId>parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
     <artifactId>model</artifactId>
     
@@ -16,24 +16,24 @@
     		<version>0.0.2-SNAPSHOT</version>
     	</dependency>
     	<dependency>
-    		<groupId>com.programyourhome.adventureroom.common</groupId>
+    		<groupId>com.programyourhome.adventureroom.module.common</groupId>
     		<artifactId>model</artifactId>
-    		<version>0.0.1-SNAPSHOT</version>
+    		<version>0.0.2-SNAPSHOT</version>
     	</dependency>
     	<dependency>
-    		<groupId>com.programyourhome.adventureroom.philipshue</groupId>
+    		<groupId>com.programyourhome.adventureroom.module.philipshue</groupId>
     		<artifactId>model</artifactId>
-    		<version>0.0.1-SNAPSHOT</version>
+    		<version>0.0.2-SNAPSHOT</version>
     	</dependency>
     	<dependency>
-    		<groupId>com.programyourhome.adventureroom.amazonpolly</groupId>
+    		<groupId>com.programyourhome.adventureroom.module.amazonpolly</groupId>
     		<artifactId>model</artifactId>
-    		<version>0.0.1-SNAPSHOT</version>
+    		<version>0.0.2-SNAPSHOT</version>
     	</dependency>
     	<dependency>
-    		<groupId>com.programyourhome.adventureroom.immerse</groupId>
+    		<groupId>com.programyourhome.adventureroom.module.immerse</groupId>
     		<artifactId>model</artifactId>
-    		<version>0.0.1-SNAPSHOT</version>
+    		<version>0.0.2-SNAPSHOT</version>
     	</dependency>
     </dependencies>
 </project>

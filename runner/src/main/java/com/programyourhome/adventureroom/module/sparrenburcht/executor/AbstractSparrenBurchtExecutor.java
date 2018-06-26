@@ -1,13 +1,13 @@
 package com.programyourhome.adventureroom.module.sparrenburcht.executor;
 
-import com.programyourhome.adventureroom.amazonpolly.module.AmazonPollyAdventureModule;
-import com.programyourhome.adventureroom.amazonpolly.service.AmazonPolly;
-import com.programyourhome.adventureroom.immerse.module.ImmerseAdventureModule;
-import com.programyourhome.adventureroom.immerse.service.Immerse;
 import com.programyourhome.adventureroom.model.script.action.Action;
+import com.programyourhome.adventureroom.module.amazonpolly.module.AmazonPollyAdventureModule;
+import com.programyourhome.adventureroom.module.amazonpolly.service.AmazonPolly;
+import com.programyourhome.adventureroom.module.immerse.module.ImmerseAdventureModule;
+import com.programyourhome.adventureroom.module.immerse.service.Immerse;
+import com.programyourhome.adventureroom.module.philipshue.module.PhilipsHueAdventureModule;
+import com.programyourhome.adventureroom.module.philipshue.service.PhilipsHue;
 import com.programyourhome.adventureroom.module.sparrenburcht.module.SparrenBurchtAdventureModule;
-import com.programyourhome.adventureroom.philipshue.module.PhilipsHueAdventureModule;
-import com.programyourhome.adventureroom.philipshue.service.PhilipsHue;
 import com.programyourhome.iotadventure.runner.action.executor.ActionExecutor;
 import com.programyourhome.iotadventure.runner.context.ExecutionContext;
 

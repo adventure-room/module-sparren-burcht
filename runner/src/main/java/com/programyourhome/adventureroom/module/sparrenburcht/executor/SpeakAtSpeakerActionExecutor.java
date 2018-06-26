@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
-import com.programyourhome.adventureroom.amazonpolly.service.model.PollyResult;
+import com.programyourhome.adventureroom.module.amazonpolly.service.model.PollyResult;
 import com.programyourhome.adventureroom.module.sparrenburcht.model.SpeakAtSpeakerAction;
 import com.programyourhome.adventureroom.module.sparrenburcht.util.WaveUtil;
 import com.programyourhome.iotadventure.runner.context.ExecutionContext;
