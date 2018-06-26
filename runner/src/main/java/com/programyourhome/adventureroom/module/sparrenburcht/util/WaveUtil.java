@@ -1,4 +1,4 @@
-package com.programyourhome.adventureroom.sparrenburcht.util;
+package com.programyourhome.adventureroom.module.sparrenburcht.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

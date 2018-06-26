@@ -1,11 +1,11 @@
-package com.programyourhome.adventureroom.sparrenburcht.module;
+package com.programyourhome.adventureroom.module.sparrenburcht.module;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 import com.programyourhome.adventureroom.dsl.regex.AbstractRegexDslAdventureModule;
 import com.programyourhome.adventureroom.dsl.regex.RegexActionConverter;
-import com.programyourhome.adventureroom.sparrenburcht.dsl.converters.SpeakAtSpeakerActionConverter;
+import com.programyourhome.adventureroom.module.sparrenburcht.dsl.converters.SpeakAtSpeakerActionConverter;
 
 public class SparrenBurchtAdventureModule extends AbstractRegexDslAdventureModule {
 

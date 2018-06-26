@@ -1,4 +1,4 @@
-package com.programyourhome.adventureroom.sparrenburcht.module;
+package com.programyourhome.adventureroom.module.sparrenburcht.module;
 
 import com.programyourhome.adventureroom.model.module.ModuleConfig;
 

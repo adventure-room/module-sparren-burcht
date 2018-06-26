@@ -1,4 +1,4 @@
-package com.programyourhome.adventureroom.sparrenburcht.model;
+package com.programyourhome.adventureroom.module.sparrenburcht.model;
 
 import com.programyourhome.adventureroom.amazonpolly.model.characters.PollyCharacter;
 import com.programyourhome.adventureroom.model.script.action.Action;

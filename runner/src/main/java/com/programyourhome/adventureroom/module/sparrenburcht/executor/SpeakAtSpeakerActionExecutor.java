@@ -1,4 +1,4 @@
-package com.programyourhome.adventureroom.sparrenburcht.executor;
+package com.programyourhome.adventureroom.module.sparrenburcht.executor;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 import com.programyourhome.adventureroom.amazonpolly.service.model.PollyResult;
-import com.programyourhome.adventureroom.sparrenburcht.model.SpeakAtSpeakerAction;
-import com.programyourhome.adventureroom.sparrenburcht.util.WaveUtil;
+import com.programyourhome.adventureroom.module.sparrenburcht.model.SpeakAtSpeakerAction;
+import com.programyourhome.adventureroom.module.sparrenburcht.util.WaveUtil;
 import com.programyourhome.iotadventure.runner.context.ExecutionContext;
 
 public class SpeakAtSpeakerActionExecutor extends AbstractSparrenBurchtExecutor<SpeakAtSpeakerAction> {
