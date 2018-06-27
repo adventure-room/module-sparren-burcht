@@ -8,32 +8,32 @@
         <version>0.0.2-SNAPSHOT</version>
     </parent>
     <artifactId>model</artifactId>
-    
+
     <dependencies>
-    	<dependency>
-    		<groupId>com.programyourhome.adventureroom</groupId>
-    		<artifactId>model</artifactId>
-    		<version>0.0.2-SNAPSHOT</version>
-    	</dependency>
-    	<dependency>
-    		<groupId>com.programyourhome.adventureroom.module.common</groupId>
-    		<artifactId>model</artifactId>
-    		<version>0.0.2-SNAPSHOT</version>
-    	</dependency>
-    	<dependency>
-    		<groupId>com.programyourhome.adventureroom.module.philipshue</groupId>
-    		<artifactId>model</artifactId>
-    		<version>0.0.2-SNAPSHOT</version>
-    	</dependency>
-    	<dependency>
-    		<groupId>com.programyourhome.adventureroom.module.amazonpolly</groupId>
-    		<artifactId>model</artifactId>
-    		<version>0.0.2-SNAPSHOT</version>
-    	</dependency>
-    	<dependency>
-    		<groupId>com.programyourhome.adventureroom.module.immerse</groupId>
-    		<artifactId>model</artifactId>
-    		<version>0.0.2-SNAPSHOT</version>
-    	</dependency>
+        <dependency>
+            <groupId>com.programyourhome.adventureroom</groupId>
+            <artifactId>model</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.programyourhome.adventureroom.module.common</groupId>
+            <artifactId>model</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.programyourhome.adventureroom.module.philipshue</groupId>
+            <artifactId>model</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.programyourhome.adventureroom.module.amazonpolly</groupId>
+            <artifactId>model</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.programyourhome.adventureroom.module.immerse</groupId>
+            <artifactId>model</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
