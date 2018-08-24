@@ -5,7 +5,7 @@ import java.util.Collection;
 
 import com.programyourhome.adventureroom.dsl.regex.AbstractRegexDslAdventureModule;
 import com.programyourhome.adventureroom.dsl.regex.RegexActionConverter;
-import com.programyourhome.adventureroom.module.sparrenburcht.dsl.converters.SpeakAtSpeakerActionConverter;
+import com.programyourhome.adventureroom.module.sparrenburcht.dsl.converters.SpeakAtSpeakersActionConverter;
 
 public class SparrenBurchtAdventureModule extends AbstractRegexDslAdventureModule {
 
@@ -32,7 +32,7 @@ public class SparrenBurchtAdventureModule extends AbstractRegexDslAdventureModul
 
     @Override
     protected Collection<RegexActionConverter<?>> getRegexActionConverters() {
-        return Arrays.asList(new SpeakAtSpeakerActionConverter());
+        return Arrays.asList(new SpeakAtSpeakersActionConverter());
     }
 
     @Override
