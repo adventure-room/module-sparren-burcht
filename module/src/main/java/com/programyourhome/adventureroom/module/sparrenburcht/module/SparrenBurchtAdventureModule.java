@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import com.programyourhome.adventureroom.dsl.regex.AbstractRegexDslAdventureModule;
 import com.programyourhome.adventureroom.dsl.regex.RegexActionConverter;
+import com.programyourhome.adventureroom.model.Adventure;
 import com.programyourhome.adventureroom.module.sparrenburcht.dsl.converters.SpeakAtSpeakersActionConverter;
 
 public class SparrenBurchtAdventureModule extends AbstractRegexDslAdventureModule {
@@ -14,7 +15,6 @@ public class SparrenBurchtAdventureModule extends AbstractRegexDslAdventureModul
     private SparrenBurchtConfig config;
 
     public SparrenBurchtAdventureModule() {
-        // We assume there will be one implementation available on the classpath. If not, behavior is undefined.
         this.initConfig();
     }
 
@@ -23,6 +23,11 @@ public class SparrenBurchtAdventureModule extends AbstractRegexDslAdventureModul
         this.config.id = ID;
         this.config.name = "SparrenBurcht";
         this.config.description = "Module that combines other modules into combined actions";
+    }
+
+    @Override
+    public void start(Adventure adventure) {
+        // No start actions needed.
     }
 
     @Override
@@ -36,7 +41,7 @@ public class SparrenBurchtAdventureModule extends AbstractRegexDslAdventureModul
     }
 
     @Override
-    public void stop() {
+    public void stop(Adventure adventure) {
         // No action needed
     }
 
