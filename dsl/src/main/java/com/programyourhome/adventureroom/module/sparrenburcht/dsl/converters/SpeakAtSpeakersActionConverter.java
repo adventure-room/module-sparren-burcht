@@ -17,10 +17,10 @@ public class SpeakAtSpeakersActionConverter extends AbstractSparrenBurchtActionC
     @Override
     public Map<String, String> getRegexMap() {
         return this.createRegexes(
-                "single", CHARACTER_ID + " says " + TEXT + " at speaker " + SPEAKER_ID,
-                "multiple", CHARACTER_ID + " says " + TEXT + " at speakers " + SPEAKER_IDS,
-                "all", CHARACTER_ID + " says " + TEXT + " at all speakers",
-                "default", CHARACTER_ID + " says " + TEXT);
+                SINGLE, CHARACTER_ID + " says " + TEXT + " at speaker " + SPEAKER_ID,
+                MULTIPLE, CHARACTER_ID + " says " + TEXT + " at speakers " + SPEAKER_IDS,
+                ALL, CHARACTER_ID + " says " + TEXT + " at all speakers",
+                DEFAULT, CHARACTER_ID + " says " + TEXT);
     }
 
     @Override
@@ -29,16 +29,16 @@ public class SpeakAtSpeakersActionConverter extends AbstractSparrenBurchtActionC
         action.character = adventure.getCharacter(matchResult.getValue(CHARACTER_ID));
         action.text = matchResult.getValue(TEXT);
         Collection<String> speakerIds = new ArrayList<>();
-        if (matchResult.getRegexName().equals("single")) {
+        if (matchResult.is(SINGLE)) {
             speakerIds = Arrays.asList(matchResult.getValue(SPEAKER_ID));
-        } else if (matchResult.getRegexName().equals("multiple")) {
+        } else if (matchResult.is(MULTIPLE)) {
             speakerIds = Arrays.asList(matchResult.getValue(SPEAKER_IDS).split(","));
-        } else if (matchResult.getRegexName().equals("all")) {
+        } else if (matchResult.is(ALL)) {
             speakerIds = StreamEx.of(adventure.getExternalResources(SpeakerExternalResource.class))
                     .map(speaker -> "" + speaker.getId())
                     .toSet();
         }
-        action.defaultSpeakers = matchResult.getRegexName().equals("default");
+        action.defaultSpeakers = matchResult.is(DEFAULT);
         action.speakerIds = speakerIds;
         return action;
     }
