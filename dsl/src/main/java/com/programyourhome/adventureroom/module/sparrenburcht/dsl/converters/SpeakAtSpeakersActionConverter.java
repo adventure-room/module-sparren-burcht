@@ -1,5 +1,8 @@
 package com.programyourhome.adventureroom.module.sparrenburcht.dsl.converters;
 
+import static com.programyourhome.adventureroom.module.immerse.dsl.converters.AbstractImmerseActionConverter.SPEAKER_ID;
+import static com.programyourhome.adventureroom.module.immerse.dsl.converters.AbstractImmerseActionConverter.SPEAKER_IDS;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;

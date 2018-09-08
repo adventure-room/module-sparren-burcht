@@ -20,5 +20,20 @@
             <artifactId>model</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.programyourhome.adventureroom.module.philipshue</groupId>
+            <artifactId>dsl</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.programyourhome.adventureroom.module.amazonpolly</groupId>
+            <artifactId>dsl</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.programyourhome.adventureroom.module.immerse</groupId>
+            <artifactId>dsl</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
