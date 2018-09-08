@@ -2,13 +2,16 @@ package com.programyourhome.adventureroom.module.sparrenburcht.executor;
 
 import java.net.URL;
 import java.util.Collection;
+import java.util.UUID;
 
 import javax.sound.sampled.AudioInputStream;
 
 import com.programyourhome.adventureroom.model.execution.ExecutionContext;
 import com.programyourhome.adventureroom.model.toolbox.DataStream;
 import com.programyourhome.adventureroom.module.immerse.model.SpeakerExternalResource;
+import com.programyourhome.adventureroom.module.immerse.service.Immerse;
 import com.programyourhome.adventureroom.module.sparrenburcht.model.SpeakAtSpeakersAction;
+import com.programyourhome.immerse.domain.Scenario;
 import com.programyourhome.immerse.domain.format.ImmerseAudioFormat;
 
 import one.util.streamex.StreamEx;
@@ -38,7 +41,16 @@ public class SpeakAtSpeakersActionExecutor extends AbstractSparrenBurchtExecutor
         ImmerseAudioFormat format = ImmerseAudioFormat.fromJavaAudioFormat(audioInputStream.getFormat());
         DataStream dataStream = new DataStream(audioInputStream, "audio/pcm");
         URL url = this.getAmazonPollyModule(context).getToolbox().getDataStreamToUrl().exposeDataStream(dataStream);
-        this.getImmerse(context).playAtSpeakers(url.toString(), format, speakerIds, false, true);
+        Immerse immerse = this.getImmerse(context);
+        Scenario scenario = immerse.scenarioBuilder()
+                .name("Speak at speakers")
+                .description("Speaking the text '" + action.text + "' at some speakers")
+                .urlWithFormat(url.toString(), format)
+                .sourceAtSpeakers(speakerIds)
+                .playOnce()
+                .build();
+        UUID playbackId = immerse.playScenario(scenario);
+        immerse.waitForPlayback(playbackId);
     }
 
 }
