@@ -1,14 +1,12 @@
 package com.programyourhome.adventureroom.module.sparrenburcht.dsl.converters;
 
-import static com.programyourhome.adventureroom.module.immerse.dsl.converters.AbstractImmerseActionConverter.SPEAKER_ID;
-import static com.programyourhome.adventureroom.module.immerse.dsl.converters.AbstractImmerseActionConverter.SPEAKER_IDS;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
 
 import com.programyourhome.adventureroom.dsl.regex.MatchResult;
+import com.programyourhome.adventureroom.dsl.regex.RegexVariable;
 import com.programyourhome.adventureroom.model.Adventure;
 import com.programyourhome.adventureroom.module.immerse.model.SpeakerExternalResource;
 import com.programyourhome.adventureroom.module.sparrenburcht.model.SpeakAtSpeakersAction;
@@ -16,6 +14,11 @@ import com.programyourhome.adventureroom.module.sparrenburcht.model.SpeakAtSpeak
 import one.util.streamex.StreamEx;
 
 public class SpeakAtSpeakersActionConverter extends AbstractSparrenBurchtActionConverter<SpeakAtSpeakersAction> {
+
+    // TODO: also use antlr immerse way without duplicating the whole grammar - but how?
+
+    public static final RegexVariable SPEAKER_ID = RESOURCE_ID.withName("speakerId");
+    public static final RegexVariable SPEAKER_IDS = RESOURCE_IDS.withName("speakerIds");
 
     @Override
     public Map<String, String> getRegexMap() {
