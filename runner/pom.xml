@@ -20,5 +20,10 @@
             <artifactId>runner</artifactId>
             <version>0.0.2-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.programyourhome.adventureroom.module.immerse</groupId>
+            <artifactId>runner</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
