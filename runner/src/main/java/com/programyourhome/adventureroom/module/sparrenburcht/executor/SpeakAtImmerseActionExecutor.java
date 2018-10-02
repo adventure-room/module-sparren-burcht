@@ -17,7 +17,9 @@ public class SpeakAtImmerseActionExecutor extends AbstractSparrenBurchtExecutor<
 
     @Override
     public void execute(SpeakAtImmerseAction action, ExecutionContext context) {
-        AudioInputStream audioInputStream = this.getAmazonPolly(context).synthesizeText(action.character.voiceId, action.text);
+        // Always set the volume to extra loud, because it can be tuned within the action.
+        String ssml = "<speak><prosody volume=\"x-loud\">" + action.text + "</prosody></speak>";
+        AudioInputStream audioInputStream = this.getAmazonPolly(context).synthesizeSsml(action.character.voiceId, ssml);
         ImmerseAudioFormat format = ImmerseAudioFormat.fromJavaAudioFormat(audioInputStream.getFormat());
         DataStream dataStream = new DataStream(audioInputStream, "audio/pcm");
         URL url = this.getAmazonPollyModule(context).getToolbox().getDataStreamToUrl().exposeDataStream(dataStream);
