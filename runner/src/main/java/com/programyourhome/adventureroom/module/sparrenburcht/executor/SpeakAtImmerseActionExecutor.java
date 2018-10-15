@@ -7,6 +7,7 @@ import javax.sound.sampled.AudioInputStream;
 
 import com.programyourhome.adventureroom.model.execution.ExecutionContext;
 import com.programyourhome.adventureroom.model.toolbox.DataStream;
+import com.programyourhome.adventureroom.model.util.IOUtil;
 import com.programyourhome.adventureroom.module.immerse.executor.PlayAudioActionExecutor;
 import com.programyourhome.adventureroom.module.immerse.model.PlayAudioAction.Resource;
 import com.programyourhome.adventureroom.module.immerse.model.PlayAudioAction.UrlResource;
@@ -14,6 +15,8 @@ import com.programyourhome.adventureroom.module.sparrenburcht.model.SpeakAtImmer
 import com.programyourhome.immerse.domain.format.ImmerseAudioFormat;
 
 public class SpeakAtImmerseActionExecutor extends AbstractSparrenBurchtExecutor<SpeakAtImmerseAction> {
+
+    private PlayAudioActionExecutor executor;
 
     @Override
     public void execute(SpeakAtImmerseAction action, ExecutionContext context) {
@@ -31,8 +34,14 @@ public class SpeakAtImmerseActionExecutor extends AbstractSparrenBurchtExecutor<
         action.playAudioAction.resource = Resource.url(urlResource);
 
         // Use the executor of the Immerse module to handle the configuration of Immerse and trigger the playback.
-        PlayAudioActionExecutor executor = new PlayAudioActionExecutor();
-        executor.execute(action.playAudioAction, context);
+        this.executor = new PlayAudioActionExecutor();
+        this.executor.execute(action.playAudioAction, context);
+    }
+
+    @Override
+    public void stop(ExecutionContext context) {
+        IOUtil.waitForCondition(() -> this.executor != null);
+        this.executor.stop(context);
     }
 
 }
